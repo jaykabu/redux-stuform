@@ -57,6 +57,8 @@ const AddUser = () => {
                     name="firstname"
                     value={user.firstname}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
                 <div className="mb-3">
@@ -69,6 +71,8 @@ const AddUser = () => {
                     name="lastname"
                     value={user.lastname}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
 
@@ -82,6 +86,8 @@ const AddUser = () => {
                     name="email"
                     value={user.email}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
                 <div className="mb-3">
@@ -94,6 +100,8 @@ const AddUser = () => {
                     name="schoolname"
                     value={user.schoolname}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
                 <div className="mb-3">
@@ -106,6 +114,8 @@ const AddUser = () => {
                     name="enrollmentno"
                     value={user.enrollmentno}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
             
@@ -120,6 +130,8 @@ const AddUser = () => {
                     name="address"
                     value={user.address}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
                 <div className="mb-3">
@@ -132,6 +144,8 @@ const AddUser = () => {
                     name="phone"
                     value={user.phone}
                     onChange={handleChange}
+                    required={true}
+                    autoComplete="off"
                   />
                 </div>
                 <button type="submit" className="btn btn-primary">
