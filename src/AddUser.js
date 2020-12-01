@@ -44,7 +44,8 @@ const AddUser = () => {
                 .max(50, "Maximum 50 character")
                 .required("school name required!"),
             enrollmentno: yup.string()
-                .min(8, "Minimum 8 characters")
+                .min(4, "Minimum 4 characters")
+                .max(8 , "Maximum 8 characters")
                 .required("enrollment number required!"),
             address: yup.string()
                 .min(2, "Minimum 4 character")
@@ -54,11 +55,12 @@ const AddUser = () => {
                 .min(10)
                 .required('a phone number is required')
         }),
-        onSubmit:values => {
+        onSubmit: async (values) => {
+            await Axios.post("http://localhost:3003/users", formik.values)
+            history.push('/studentform');
             alert(JSON.stringify(values, null, 2))
         }
     });
-
     const handleChange = (event) => {
         const {name, value} = event.target;
 
@@ -69,11 +71,11 @@ const AddUser = () => {
             }
         })
     }
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await Axios.post("http://localhost:3003/users", formik.values)
-        history.push('/studentform');
-    }
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     await Axios.post("http://localhost:3003/users", formik.values)
+    //     history.push('/studentform');
+    // }
     return (
         <>
             <div>
@@ -97,7 +99,6 @@ const AddUser = () => {
                                         value={formik.values.firstname}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.firstname && formik.touched.firstname &&
                                     (<p className="err">{formik.errors.firstname}</p>)}
@@ -113,7 +114,6 @@ const AddUser = () => {
                                         value={formik.values.lastname}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.lastname && formik.touched.lastname &&
                                     (<p className="err">{formik.errors.lastname}</p>)}
@@ -130,7 +130,6 @@ const AddUser = () => {
                                         value={formik.values.email}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.email && formik.touched.email && (
                                         <p className="err">{formik.errors.email}</p>
@@ -147,7 +146,6 @@ const AddUser = () => {
                                         value={formik.values.schoolname}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.schoolname && formik.touched.schoolname && (
                                         <p className="err"> {formik.errors.schoolname}</p>
@@ -164,7 +162,6 @@ const AddUser = () => {
                                         value={formik.values.enrollmentno}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.enrollmentno && formik.touched.enrollmentno && (
                                         <p className="err">{formik.errors.enrollmentno}</p>
@@ -182,7 +179,6 @@ const AddUser = () => {
                                         value={formik.values.address}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.address && formik.touched.address && (
                                         <p className="err"> {formik.errors.address}</p>
@@ -199,7 +195,6 @@ const AddUser = () => {
                                         value={formik.values.phone}
                                         onChange={formik.handleChange}
                                         autoComplete="off"
-                                        // required={true}
                                     />
                                     {formik.errors.phone && formik.touched.phone && (
                                         <p className="err"> {formik.errors.phone}</p>

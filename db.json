@@ -75,10 +75,20 @@
       "lastname": "john",
       "email": "robert@outlook.com",
       "schoolname": "st thomas",
-      "enrollmentno": 1509,
+      "enrollmentno": "15098",
       "address": "AMERICA",
-      "phone": 64789123,
+      "phone": "1234567890",
       "id": 8
+    },
+    {
+      "firstname": "jay",
+      "lastname": "kabu",
+      "email": "jay@gmail.com",
+      "schoolname": "sdjain",
+      "enrollmentno": "1508",
+      "address": "surat",
+      "phone": "9087654321",
+      "id": 9
     }
   ]
 }

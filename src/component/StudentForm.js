@@ -46,7 +46,7 @@ const StudentForm = ()=>{
   <tbody>
     {
         users.map((user , index)=>(
-            <tr>
+            <tr key={index}>
             <th scope="row"> {index + 1} </th>
             <th> {user.firstname} </th>
             <th> {user.lastname} </th>
