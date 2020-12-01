@@ -18,11 +18,9 @@ const EditUser = () => {
         enrollmentno:"",
         address:'',
         phone:''
-
     })
 
     const handleChange = (event)=>{
-        // console.log(e);
         const {name , value} = event.target;
 
         setUser((oldData)=>{

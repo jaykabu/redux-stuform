@@ -1,163 +1,220 @@
+import React from "react";
 import Axios from "axios";
-import React, { useState } from "react";
 import {useHistory} from "react-router-dom";
-
+import {useFormik} from "formik";
+import * as yup from "yup";
 
 const AddUser = () => {
-
     let history = useHistory();
 
-    const[user , setUser] = useState({
-        firstname:'',
-        lastname:'',
-        email:'',
-        schoolname:"",
-        enrollmentno:"",
-        address:'',
-        phone:''
+    // const [user, setUser] = useState({
+    //     firstname: '',
+    //     lastname: '',
+    //     email: '',
+    //     schoolname: "",
+    //     enrollmentno: "",
+    //     address: '',
+    //     phone: ''
+    // });
 
-    })
+    const formik = useFormik({
+        initialValues: {
+            firstname: '',
+            lastname: '',
+            email: '',
+            schoolname: "",
+            enrollmentno: "",
+            address: '',
+            phone: ''
+        },
+        validationSchema: yup.object({
+            firstname: yup.string()
+                .min(2, "Minimum 4 character")
+                .max(50, "Maximum 50 character")
+                .required("firstName required!"),
+            lastname: yup.string()
+                .min(2, "Minimum 4 character")
+                .max(50, "Maximum 50 character")
+                .required("lastName required!"),
+            email: yup.string()
+                .email("Invalid email format")
+                .required("email required!"),
+            schoolname: yup.string()
+                .min(2, "Minimum 4 character")
+                .max(50, "Maximum 50 character")
+                .required("school name required!"),
+            enrollmentno: yup.string()
+                .min(8, "Minimum 8 characters")
+                .required("enrollment number required!"),
+            address: yup.string()
+                .min(2, "Minimum 4 character")
+                .max(200, "Maximum 200 character")
+                .required("address required!"),
+            phone: yup.string()
+                .min(10)
+                .required('a phone number is required')
+        }),
+        onSubmit:values => {
+            alert(JSON.stringify(values, null, 2))
+        }
+    });
 
-    const handleChange = (event)=>{
-        const {name , value} = event.target;
+    const handleChange = (event) => {
+        const {name, value} = event.target;
 
-        setUser((oldData)=>{
-            return{
+        formik.values((oldData) => {
+            return {
                 ...oldData,
-                [name]:value
+                [name]: value
             }
         })
     }
-
-    const handleSubmit = async (e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        await Axios.post("http://localhost:3003/users" , user)
+        await Axios.post("http://localhost:3003/users", formik.values)
         history.push('/studentform');
     }
+    return (
+        <>
+            <div>
+                <div>
+                    <h1 className="justify-content-center d-flex mt-3 ">
+                        Add User
+                    </h1>
+                </div>
+                <div className={"container-fluid nav_bg mt-5"}>
+                    <div className={"row"}>
+                        <div className={"col-10 mx-auto"}>
+                            <form onSubmit={(e) => formik.handleSubmit(e)}>
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="FirstName"
+                                        name="firstname"
+                                        value={formik.values.firstname}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.firstname && formik.touched.firstname &&
+                                    (<p className="err">{formik.errors.firstname}</p>)}
+                                </div>
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="LastName"
+                                        name="lastname"
+                                        value={formik.values.lastname}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.lastname && formik.touched.lastname &&
+                                    (<p className="err">{formik.errors.lastname}</p>)}
+                                </div>
 
-  return (
-    <>
-      <div>
-      <div>
-          <h1 className="justify-content-center d-flex mt-3 ">
-              Add User
-          </h1>
-      </div>
-        <div className={"container-fluid nav_bg mt-5"}>
-          <div className={"row"}>
-            <div className={"col-10 mx-auto"}>
-              <form onSubmit={e => handleSubmit(e)}>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="FirstName"
-                    name="firstname"
-                    value={user.firstname}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="LastName"
-                    name="lastname"
-                    value={user.lastname}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
-                </div>
+                                <div className="mb-3">
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Email"
+                                        name="email"
+                                        value={formik.values.email}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.email && formik.touched.email && (
+                                        <p className="err">{formik.errors.email}</p>
+                                    )}
+                                </div>
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="SchoolName"
+                                        name="schoolname"
+                                        value={formik.values.schoolname}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.schoolname && formik.touched.schoolname && (
+                                        <p className="err"> {formik.errors.schoolname}</p>
+                                    )}
+                                </div>
+                                <div className="mb-3">
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Enrollment No."
+                                        name="enrollmentno"
+                                        value={formik.values.enrollmentno}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.enrollmentno && formik.touched.enrollmentno && (
+                                        <p className="err">{formik.errors.enrollmentno}</p>
+                                    )}
+                                </div>
 
-                <div className="mb-3">
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Email"
-                    name="email"
-                    value={user.email}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
+                                <div className="mb-3">
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Address"
+                                        name="address"
+                                        value={formik.values.address}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.address && formik.touched.address && (
+                                        <p className="err"> {formik.errors.address}</p>
+                                    )}
+                                </div>
+                                <div className="mb-3">
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Phone No."
+                                        name="phone"
+                                        value={formik.values.phone}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                        // required={true}
+                                    />
+                                    {formik.errors.phone && formik.touched.phone && (
+                                        <p className="err"> {formik.errors.phone}</p>
+                                    )}
+                                </div>
+                                <button type="submit" className="btn btn-primary">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="SchoolName"
-                    name="schoolname"
-                    value={user.schoolname}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="number"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Enrollment No."
-                    name="enrollmentno"
-                    value={user.enrollmentno}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
-                </div>
-            
-                <div className="mb-3">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    name="Address"
-                    placeholder="Address"
-                    name="address"
-                    value={user.address}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    type="number"
-                    className="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Phone No."
-                    name="phone"
-                    value={user.phone}
-                    onChange={handleChange}
-                    required={true}
-                    autoComplete="off"
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary">
-                  Submit
-                </button>
-              </form>
             </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+        </>
+    )
 };
 
 export default AddUser;

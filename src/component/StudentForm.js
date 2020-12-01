@@ -13,7 +13,7 @@ const StudentForm = ()=>{
 
     const loadUsers = async ()=>{
         const result = await axios.get("http://localhost:3003/users");
-        setUsers(result.data.reverse());
+        setUsers(result.data);
     }
 
     const deleteUser = async (id)=>{
@@ -28,7 +28,7 @@ const StudentForm = ()=>{
             <h1 className =" justify-content-center d-flex mt-3 ">StudentFrom</h1>
         </div>
         <hr/>
-        <table class="table border shadow mt-4">
+        <table className="table border shadow mt-4">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -56,8 +56,8 @@ const StudentForm = ()=>{
             <th> {user.address} </th>
             <th> {user.phone} </th>
             <td>
-                <Link className="btn btn-primary mr-2" to={`user/${user.id}`}>View</Link>
-                <Link className="btn btn-outline-primary mr-2" to={`edit/${user.id}`}>Edit</Link>
+                <Link className="btn btn-primary mr-2" to={`user/${user.id}`}> View </Link>
+                <Link className="btn btn-outline-primary mr-2" to={`edit/${user.id}`}> Edit </Link>
                 <Link className="btn btn-outline-danger" onClick={()=>deleteUser(user.id)}> Delete </Link>
             </td>
             </tr>

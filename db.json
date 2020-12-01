@@ -49,6 +49,36 @@
       "enrollmentno": "1505",
       "address": "London",
       "phone": "9944533111"
+    },
+    {
+      "firstname": "jay",
+      "lastname": "kabutarwala",
+      "email": "asf@gmail.com",
+      "schoolname": "Gurukul",
+      "enrollmentno": "1509",
+      "address": "SURAT",
+      "phone": "456789043",
+      "id": 6
+    },
+    {
+      "firstname": "jay",
+      "lastname": "kabutarwala",
+      "email": "jay@gmail.com",
+      "schoolname": "sardayatan",
+      "enrollmentno": "1504",
+      "address": "surat",
+      "phone": 9537201487,
+      "id": 7
+    },
+    {
+      "firstname": "robert",
+      "lastname": "john",
+      "email": "robert@outlook.com",
+      "schoolname": "st thomas",
+      "enrollmentno": 1509,
+      "address": "AMERICA",
+      "phone": 64789123,
+      "id": 8
     }
   ]
 }
