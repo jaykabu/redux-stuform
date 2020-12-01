@@ -61,16 +61,17 @@ const AddUser = () => {
             alert(JSON.stringify(values, null, 2))
         }
     });
-    const handleChange = (event) => {
-        const {name, value} = event.target;
 
-        formik.values((oldData) => {
-            return {
-                ...oldData,
-                [name]: value
-            }
-        })
-    }
+    // const handleChange = (event) => {
+    //     const {name, value} = event.target;
+    //
+    //     formik.values((oldData) => {
+    //         return {
+    //             ...oldData,
+    //             [name]: value
+    //         }
+    //     })
+    // }
     // const handleSubmit = async (e) => {
     //     e.preventDefault();
     //     await Axios.post("http://localhost:3003/users", formik.values)

@@ -53,42 +53,22 @@
     {
       "firstname": "jay",
       "lastname": "kabutarwala",
-      "email": "asf@gmail.com",
-      "schoolname": "Gurukul",
-      "enrollmentno": "1509",
-      "address": "SURAT",
-      "phone": "456789043",
-      "id": 6
-    },
-    {
-      "firstname": "jay",
-      "lastname": "kabutarwala",
       "email": "jay@gmail.com",
-      "schoolname": "sardayatan",
-      "enrollmentno": "1504",
+      "schoolname": "SD Jain",
+      "enrollmentno": 1508,
       "address": "surat",
       "phone": 9537201487,
-      "id": 7
+      "id": 6
     },
     {
       "firstname": "robert",
       "lastname": "john",
       "email": "robert@outlook.com",
-      "schoolname": "st thomas",
-      "enrollmentno": "15098",
-      "address": "AMERICA",
-      "phone": "1234567890",
-      "id": 8
-    },
-    {
-      "firstname": "jay",
-      "lastname": "kabu",
-      "email": "jay@gmail.com",
-      "schoolname": "sdjain",
-      "enrollmentno": "1508",
-      "address": "surat",
-      "phone": "9087654321",
-      "id": 9
+      "schoolname": "st.thomas",
+      "enrollmentno": 1509,
+      "address": "USA",
+      "phone": 9754312349,
+      "id": 7
     }
   ]
 }

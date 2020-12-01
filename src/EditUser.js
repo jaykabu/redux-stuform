@@ -1,6 +1,6 @@
 import Axios from "axios";
-import React, { useState , useEffect } from "react";
-import { useHistory , useParams } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {useHistory, useParams} from "react-router-dom";
 
 
 const EditUser = () => {
@@ -10,7 +10,7 @@ const EditUser = () => {
     const {id} = useParams();
     // alert(id)
 
-    const[user , setUser] = useState({
+    const [user, setUser] = useState({
         firstname:'',
         lastname:'',
         email:'',
@@ -41,20 +41,19 @@ const EditUser = () => {
         history.push('/studentform');
     }
 
-    const loadUser = async () =>{
-        const result = await Axios.get(`http://localhost:3003/users/${id}`);
-       setUser(result.data);
+    const loadUser = async () => {
+        const res = await Axios.get(`http://localhost:3003/users/${id}`);
+        setUser(res.data);
     }
 
   return (
     <>
-    
-      <hr/>
-      <div>
-          <h1 className="justify-content-center d-flex mt-3 ">
-              Edit A User
-          </h1>
-      </div>
+        <hr/>
+        <div>
+            <h1 className="justify-content-center d-flex mt-3 ">
+                Edit A User
+            </h1>
+        </div>
       <hr/>
         <div className={"container-fluid nav_bg mt-5"}>
           <div className={"row"}>
