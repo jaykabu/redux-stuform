@@ -28,7 +28,7 @@ const StudentForm = ()=>{
             <h1 className =" justify-content-center d-flex mt-3 ">StudentFrom</h1>
         </div>
         <hr/>
-        <table className="table border shadow mt-4">
+        <table className="table border shadow mt-4 table-primary">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -39,11 +39,12 @@ const StudentForm = ()=>{
       <th scope="col">EnrollmentNo</th>
       <th scope="col">Address</th>
       <th scope="col">MobileNo</th>
+      <th scope="col">Password</th>
       <th scope="col">Action</th>
 
     </tr>
   </thead>
-  <tbody>
+  <tbody className="table-secondary">
     {
         users.map((user , index)=>(
             <tr key={index}>
@@ -55,6 +56,7 @@ const StudentForm = ()=>{
             <th> {user.enrollmentno} </th>
             <th> {user.address} </th>
             <th> {user.phone} </th>
+            <th> {user.password} </th>
             <td>
                 <Link className="btn btn-primary mr-2" to={`user/${user.id}`}> View </Link>
                 <Link className="btn btn-outline-primary mr-2" to={`edit/${user.id}`}> Edit </Link>

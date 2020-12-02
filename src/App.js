@@ -7,6 +7,7 @@ import Navbar from "./component/Navbar";
 import AddUser from "./AddUser";
 import EditUser from "./EditUser";
 import User from "./User";
+import Login from "./component/Login";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Route exact path={"/add"} component={AddUser} />
         <Route exact path={"/edit/:id"} component={EditUser} />
         <Route exact path={'/user/:id'} component={User} />
-      S</Switch>
+        <Route exact path={'/login'} component={Login} />
+      </Switch>
     </>
   );
 }

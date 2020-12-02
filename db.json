@@ -8,7 +8,8 @@
       "schoolname": "SD Jain",
       "enrollmentno": "1501",
       "address": "Surat",
-      "phone": "9537894564"
+      "phone": "9537894564",
+      "password": "Leanne123"
     },
     {
       "id": 2,
@@ -18,17 +19,19 @@
       "schoolname": "Gurukul",
       "enrollmentno": "1502",
       "address": "Mumbai",
-      "phone": "9874563780"
+      "phone": "9874563780",
+      "password": "Ervin123"
     },
     {
       "id": 3,
-      "firstname": "Clementine ",
+      "firstname": "Clementine",
       "lastname": "Bauch",
       "email": "Nathan@yesenia.net",
       "schoolname": "Gajera",
       "enrollmentno": "1503",
       "address": "Pune",
-      "phone": "8866773698"
+      "phone": "8866773698",
+      "password": "Clementine123"
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "schoolname": "Gandhi",
       "enrollmentno": "1504",
       "address": "U.S.A",
-      "phone": "9977445693"
+      "phone": "9977445693",
+      "password": "Patricia123"
     },
     {
       "id": 5,
@@ -48,27 +52,19 @@
       "schoolname": "Vidhyaphith",
       "enrollmentno": "1505",
       "address": "London",
-      "phone": "9944533111"
+      "phone": "9944533111",
+      "password": "Chelsey"
     },
     {
       "firstname": "jay",
       "lastname": "kabutarwala",
       "email": "jay@gmail.com",
-      "schoolname": "SD Jain",
+      "schoolname": "SD jain",
       "enrollmentno": 1508,
       "address": "surat",
       "phone": 9537201487,
+      "password": "123456",
       "id": 6
-    },
-    {
-      "firstname": "robert",
-      "lastname": "john",
-      "email": "robert@outlook.com",
-      "schoolname": "st.thomas",
-      "enrollmentno": 1509,
-      "address": "USA",
-      "phone": 9754312349,
-      "id": 7
     }
   ]
 }

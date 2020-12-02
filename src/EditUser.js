@@ -17,7 +17,8 @@ const EditUser = () => {
         schoolname:"",
         enrollmentno:"",
         address:'',
-        phone:''
+        phone:'',
+        password:''
     })
 
     const handleChange = (event)=>{
@@ -146,6 +147,18 @@ const EditUser = () => {
                     onChange={handleChange}
                   />
                 </div>
+                  <div className="mb-3">
+                      <input
+                          type="password"
+                          className="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          placeholder="Password"
+                          name="password"
+                          value={user.password}
+                          onChange={handleChange}
+                      />
+                  </div>
                 <button type="submit" className="btn btn-warning btn-block">
                   Update User
                 </button>

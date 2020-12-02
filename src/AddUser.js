@@ -25,7 +25,8 @@ const AddUser = () => {
             schoolname: "",
             enrollmentno: "",
             address: '',
-            phone: ''
+            phone: '',
+            password:''
         },
         validationSchema: yup.object({
             firstname: yup.string()
@@ -53,7 +54,9 @@ const AddUser = () => {
                 .required("address required!"),
             phone: yup.string()
                 .min(10)
-                .required('a phone number is required')
+                .required('a phone number is required'),
+            password: yup.string()
+                .required("Please provide a valid password"),
         }),
         onSubmit: async (values) => {
             await Axios.post("http://localhost:3003/users", formik.values)
@@ -201,6 +204,23 @@ const AddUser = () => {
                                         <p className="err"> {formik.errors.phone}</p>
                                     )}
                                 </div>
+
+                                <div className="mb-3">
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        id="exampleInputEmail1"
+                                        aria-describedby="emailHelp"
+                                        placeholder="Password"
+                                        name="password"
+                                        value={formik.values.password}
+                                        onChange={formik.handleChange}
+                                        autoComplete="off"
+                                    />
+                                    {formik.errors.password && formik.touched.password &&
+                                    (<p className="err">{formik.errors.password}</p>)}
+                                </div>
+
                                 <button type="submit" className="btn btn-primary">
                                     Submit
                                 </button>

@@ -11,6 +11,7 @@ const User = () => {
     enrollmentno: "",
     address: "",
     phone: "",
+    password:""
   });
 
   const { id } = useParams();
@@ -40,7 +41,7 @@ const User = () => {
           <li className="list-group-item"> Enrollment no : {user.enrollmentno} </li>
           <li className="list-group-item"> Address: {user.address} </li>
           <li className="list-group-item"> Phone no : {user.phone} </li>
-
+          <li className="list-group-item"> Password : {user.password} </li>
         </ul>
       </div>
     </>
