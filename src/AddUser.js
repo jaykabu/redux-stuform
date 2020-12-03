@@ -4,9 +4,9 @@ import {useHistory} from "react-router-dom";
 import {useFormik} from "formik";
 import * as yup from "yup";
 
-const AddUser = () => {
+const AddUser = (props) => {
     let history = useHistory();
-
+    // console.log(props)
     // const [user, setUser] = useState({
     //     firstname: '',
     //     lastname: '',
@@ -21,12 +21,12 @@ const AddUser = () => {
         initialValues: {
             firstname: '',
             lastname: '',
-            email: '',
+            email: props.history.location.state.email  ? props.history.location.state.email : '',
             schoolname: "",
             enrollmentno: "",
             address: '',
             phone: '',
-            password:''
+            password:props.history.location.state.password ? props.history.location.state.password : "",
         },
         validationSchema: yup.object({
             firstname: yup.string()

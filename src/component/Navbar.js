@@ -48,6 +48,7 @@ const Navbar = () => {
                         Login
                       </NavLink>
                     </li>
+
                   </ul>
                 </div>
 

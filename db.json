@@ -34,17 +34,6 @@
       "password": "Clementine123"
     },
     {
-      "id": 4,
-      "firstname": "Patricia",
-      "lastname": "SLebsack",
-      "email": "Julianne.OConner@kory.org",
-      "schoolname": "Gandhi",
-      "enrollmentno": "1504",
-      "address": "U.S.A",
-      "phone": "9977445693",
-      "password": "Patricia123"
-    },
-    {
       "id": 5,
       "firstname": "Chelsey",
       "lastname": "Dietrich",
@@ -53,7 +42,7 @@
       "enrollmentno": "1505",
       "address": "London",
       "phone": "9944533111",
-      "password": "Chelsey"
+      "password": "Chelsey123"
     },
     {
       "firstname": "jay",
@@ -63,8 +52,30 @@
       "enrollmentno": 1508,
       "address": "surat",
       "phone": 9537201487,
-      "password": "123456",
+      "password": "12345678",
       "id": 6
+    },
+    {
+      "firstname": "jay",
+      "lastname": "kabutarwala",
+      "email": "jaykabutarwala@gmail.com",
+      "schoolname": "sd jain",
+      "enrollmentno": 123456,
+      "address": "mumbai",
+      "phone": 9537894564,
+      "password": "8488041998004",
+      "id": 7
+    },
+    {
+      "firstname": "kabutarwala",
+      "lastname": "jay",
+      "email": "kabutarwalajay@outlook.com",
+      "schoolname": "sardayatan",
+      "enrollmentno": 78945,
+      "address": "pune",
+      "phone": 9871236540,
+      "password": "123456789",
+      "id": 8
     }
   ]
 }

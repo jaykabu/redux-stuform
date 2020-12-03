@@ -8,6 +8,7 @@ import AddUser from "./AddUser";
 import EditUser from "./EditUser";
 import User from "./User";
 import Login from "./component/Login";
+import Loginsucc from "./Loginsucc";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path={"/edit/:id"} component={EditUser} />
         <Route exact path={'/user/:id'} component={User} />
         <Route exact path={'/login'} component={Login} />
+        <Route exact path={'/loginsucc'} component={Loginsucc} />
       </Switch>
     </>
   );
