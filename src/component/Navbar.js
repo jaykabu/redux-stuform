@@ -9,10 +9,7 @@ const Navbar = () => {
         
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
               <div className="container-fluid">
-                <NavLink className="navbar-brand" to={"/"}>
-                  User
-                </NavLink>
-                <button
+                  <button
                   className="navbar-toggler"
                   type="button"
                   data-toggle="collapse"

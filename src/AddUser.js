@@ -19,6 +19,7 @@ const AddUser = (props) => {
 
     const formik = useFormik({
         initialValues: {
+            id:props.history.location.state.id ? props.history.location.state.id : '',
             firstname: '',
             lastname: '',
             email: props.history.location.state.email  ? props.history.location.state.email : '',
@@ -220,7 +221,6 @@ const AddUser = (props) => {
                                     {formik.errors.password && formik.touched.password &&
                                     (<p className="err">{formik.errors.password}</p>)}
                                 </div>
-
                                 <button type="submit" className="btn btn-primary">
                                     Submit
                                 </button>

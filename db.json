@@ -57,25 +57,36 @@
     },
     {
       "firstname": "jay",
-      "lastname": "kabutarwala",
-      "email": "jaykabutarwala@gmail.com",
+      "lastname": "kabu",
+      "email": "jaykabutarwala@outlook.com",
       "schoolname": "sd jain",
-      "enrollmentno": 123456,
-      "address": "mumbai",
-      "phone": 9537894564,
-      "password": "8488041998004",
-      "id": 7
+      "enrollmentno": 1234,
+      "address": "surat",
+      "phone": 9654321891,
+      "password": "123654789",
+      "id": 10
     },
     {
-      "firstname": "kabutarwala",
-      "lastname": "jay",
-      "email": "kabutarwalajay@outlook.com",
-      "schoolname": "sardayatan",
-      "enrollmentno": 78945,
-      "address": "pune",
-      "phone": 9871236540,
-      "password": "123456789",
-      "id": 8
+      "id": 11,
+      "firstname": "parth",
+      "lastname": "jariwala",
+      "email": "parthjariwala@gmail.com",
+      "schoolname": "sd jain",
+      "enrollmentno": 1234,
+      "address": "surat",
+      "phone": 9876543211,
+      "password": "123456789"
+    },
+    {
+      "id": 12,
+      "firstname": "yash",
+      "lastname": "jari",
+      "email": "yashjari@gmail.com",
+      "schoolname": "gurukul",
+      "enrollmentno": 123567,
+      "address": "mumbai",
+      "phone": 7896541230,
+      "password": "789654123"
     }
   ]
 }

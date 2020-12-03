@@ -20,7 +20,7 @@ const StudentForm = ()=>{
         await axios.delete(`http://localhost:3003/users/${id}`)
         loadUsers();
     } 
-
+// console.log("usersdjs",users)
     return(
         <>
         <hr/>
@@ -48,7 +48,7 @@ const StudentForm = ()=>{
     {
         users.map((user , index)=>(
             <tr key={index}>
-            <th scope="row"> {index + 1} </th>
+            <th scope="row"> {user.id} </th>
             <th> {user.firstname} </th>
             <th> {user.lastname} </th>
             <th> {user.email} </th>

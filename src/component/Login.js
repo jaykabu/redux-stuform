@@ -27,35 +27,47 @@ const Login = () => {
                 .required("password required")
         }),
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2))
+            // alert(JSON.stringify(values, null, 2))
             console.log('update values:--', values)
-            pushToArray(items, values)
 
+            pushToArray(items, values)
             function pushToArray(arr, obj) {
                 const index = arr.findIndex((e) => e.email === obj.email);
-                console.log("index", index)
+                // console.log("index", index)
                 if (index !== -1) {
-                    alert('user already exist')
+                    // alert('user already exist')
                     console.log("user already exist")
                     history.push('/loginsucc')
                     if (arr[index].password === obj.password) {
-                        alert('logging successfully')
+                        // alert('logging successfully')
                         console.log("logging successfully")
                     } else {
-                        alert('logging failed')
+                        // alert('logging failed')
                         console.log("logging failed")
                     }
                 } else {
-                    alert('New User Logging')
+                    // alert('New User Logging')
+                    let uId = []
+                    for (let i = 0; i < items.length; i++) {
+                        if (items[i].id) {
+                            uId.push(items[i].id)
+                            Math.max([uId])
+                        }
+                    }
+                    console.log(Math.max(...uId));
+                    const newId = (Math.max(...uId) + 1)
                     history.push({
-                        pathname:'/add',
-                        state:{email:values.email , password:values.password}
+                        pathname: '/add',
+                        state: {email: values.email, password: values.password , id:newId}
                     })
                     console.log("New User Logging")
                 }
             }
         }
     })
+
+
+
 
 
     const loadUsers = async () => {

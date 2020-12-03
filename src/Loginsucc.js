@@ -3,7 +3,11 @@ import React from "react";
 const Loginsucc = () => {
     return (
         <>
-            <h1>Login Successfully</h1>
+           <div>
+               <h1 className="text-center mt-5">
+                   Login Successfully
+               </h1>
+            </div>
         </>
     )
 };
