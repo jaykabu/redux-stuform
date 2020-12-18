@@ -6,6 +6,7 @@ import * as yup from "yup";
 
 const AddUser = (props) => {
     let history = useHistory();
+    // console.log("Props",props);
     // console.log(props)
     // const [user, setUser] = useState({
     //     firstname: '',
@@ -15,19 +16,19 @@ const AddUser = (props) => {
     //     enrollmentno: "",
     //     address: '',
     //     phone: ''
-    // });
+    // }); 
 
     const formik = useFormik({
         initialValues: {
-            id:props.history.location.state.id ? props.history.location.state.id : '',
+            id:props.history.location.state?.id ? props.history.location.state?.id : '',
             firstname: '',
             lastname: '',
-            email: props.history.location.state.email  ? props.history.location.state.email : '',
+            email: props.history.location.state?.email  ? props.history.location.state?.email : '',
             schoolname: "",
             enrollmentno: "",
             address: '',
             phone: '',
-            password:props.history.location.state.password ? props.history.location.state.password : "",
+            password:props.history.location.state?.password ? props.history.location.state?.password : "",
         },
         validationSchema: yup.object({
             firstname: yup.string()
